@@ -12,7 +12,7 @@ WIN_COMBINATIONS = [
   [2, 4, 6]  # diagonal right
 ]
 
-def play
+def play(board)
   while !over?(board)
     turn(board)
   end
