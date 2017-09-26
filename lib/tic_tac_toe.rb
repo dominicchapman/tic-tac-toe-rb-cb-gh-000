@@ -31,3 +31,8 @@ end
 def move(board, input_to_index, character)
   board[input_to_index] = chracter
 end
+
+# if the position is free, the method should return false
+def position_taken?(board, index)
+  board[index] == "nil" || board[index] == "   "
+end
