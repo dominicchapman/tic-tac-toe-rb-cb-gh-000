@@ -21,3 +21,9 @@ def display_board(board)
   puts "\n-----------\n"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
+
+# for player, board contains spaces 1-9, but array is 0-8
+def input_to_index(input)
+  # input is string; we convert to integer
+  input.to_i - 1
+end
