@@ -36,3 +36,9 @@ end
 def position_taken?(board, index)
   board[index] == "nil" || board[index] == "   "
 end
+
+# move is present on board && not already filled
+# returns true if the move is valid
+def valid_move?(board, index)
+  index.range?(0,8) && !position_taken
+end
