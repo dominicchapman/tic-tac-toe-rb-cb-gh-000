@@ -27,3 +27,7 @@ def input_to_index(input)
   # input is string; we convert to integer
   input.to_i - 1
 end
+
+def move(board, input_to_index, character)
+  board[input_to_index] = chracter
+end
