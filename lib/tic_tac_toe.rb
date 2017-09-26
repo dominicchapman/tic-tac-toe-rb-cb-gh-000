@@ -28,8 +28,8 @@ def input_to_index(input)
   input.to_i - 1
 end
 
-def move(board, input_to_index, character)
-  board[input_to_index] = chracter
+def move(board, index, character)
+  board[index] = character
 end
 
 # if the position is free, the method should return false
@@ -40,5 +40,13 @@ end
 # move is present on board && not already filled
 # returns true if the move is valid
 def valid_move?(board, index)
-  index.range?(0,8) && !position_taken
+  index.between?(0, 8) && !position_taken?(board, index)
+end
+
+def turn
+  print "Please choose a position, 1-9"
+  input = gets
+  index = input_to_index(input)
+  if valid_move(board, index)
+    move(board, index, character)
 end
