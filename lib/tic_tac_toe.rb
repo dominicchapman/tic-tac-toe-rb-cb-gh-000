@@ -33,8 +33,9 @@ def move(board, index, character)
 end
 
 # if the position is free, the method should return false
+# so if position is not free, return true
 def position_taken?(board, index)
-  board[index] == "nil" || board[index] == "   "
+  !(board[index].nil? || board[index] == " ")
 end
 
 # move is present on board && not already filled
