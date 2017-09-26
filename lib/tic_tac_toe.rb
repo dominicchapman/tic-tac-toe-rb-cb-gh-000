@@ -12,6 +12,17 @@ WIN_COMBINATIONS = [
   [2, 4, 6]  # diagonal right
 ]
 
+def play
+  while !over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congrats, #{winner(board)}!"
+  elsif draw?(board)
+    puts "Dang, that's a draw!"
+  end
+
+end
 
 # board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def display_board(board)
@@ -44,6 +55,8 @@ def valid_move?(board, index)
   index.between?(0, 8) && !position_taken?(board, index)
 end
 
+# ask player to make a turn and display new board if move valid
+# if not valid, ask again
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.chomp
